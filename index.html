@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+</head>
+  <body>
+    <div class="loading">
+        <div>
+            <h3>Loading ....</h3>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Quản lý sinh viên</h3>
+        <div class="form-group">
+            <p>Mã sinh viên</p>
+            <input class="form-control" id="maSinhVien" />
+            <p class="text-danger" id="error_required_maSinhVien"></p>
+            <p class="text-danger" id="error_min_max_length_maSinhVien"></p>
+        </div>
+        <div class="form-group">
+            <p>Tên sinh viên</p>
+            <input class="form-control" id="tenSinhVien" />
+            <p class="text-danger" id="error_required_tenSinhVien"></p>
+            <p class="text-danger" id="error_all_letter_tenSinhVien"></p>
+
+        </div>
+        <div class="form-group">
+            <p>Loại sinh viên</p>
+            <select class="form-control" id="loaiSinhVien" > 
+                <option>Khó khăn</option>
+                <option>Bình thường</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>diemRenLuyen</p>
+            <input class="form-control" id="diemRenLuyen" />
+            <p id="error_required_diemRenLuyen" class="text text-danger"></p>
+        </div>
+        <div class="form-group">
+            <p>Email</p>
+            <input class="form-control" id="email" />
+            <p class="text-danger" id="error_email"></p>
+        </div>
+        <div class="form-group">
+            <p>Số điện thoại</p>
+            <input class="form-control" id="soDienThoai" />
+            <p class="text-danger" id="error_all_number_soDienThoai"></p>
+        </div>
+        <div class="form-group row">
+            <div class="col-4">
+                <p>Điểm toán</p>
+                <input class="form-control" id="diemToan" />
+                <p class="text-danger" id="error_all_number_diemToan"></p>
+
+                <p class="text-danger" id="error_min_max_value_diemToan"></p>
+            </div>
+            <div class="col-4">
+                <p>Điểm lý</p>
+                <input class="form-control" id="diemLy" />
+                <p class="text-danger" id="error_all_number_diemLy"></p>
+            </div>
+            <div class="col-4">
+                <p>Điểm hoá</p>
+                <input class="form-control" id="diemHoa" />
+                <p class="text-danger" id="error_all_number_diemHoa"></p>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <button id="btnXacNhan" class="btn btn-outline-success">Xác nhận</button>
+            <button id="btnCapNhat" class="btn btn-outline-primary ml-2">Cập nhật</button>
+        </div>
+        <div class="form-group">
+            <p>Nhập tên sinh viên cần tìm</p>
+            <input class="form-control" id="tuKhoa" /> 
+            <button class="btn btn-success" id="btnTimKiem">Tìm kiếm</button>
+        </div>
+        <div class="mt-2">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Mã sinh viên</th>
+                        <th>Tên sinh viên</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Loại sinh viên</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tblSinhVien">
+                    <!-- <tr>
+                        <td id="">1</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js" integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./util/validation.js"></script>
+    <!--models-->
+    <script src="./models/SinhVien.js"></script>
+    <!--controller-->
+    <script src="./controllers/index.js"></script>
+
+    </body>
+</html>
